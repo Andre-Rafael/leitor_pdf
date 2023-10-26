@@ -1,0 +1,17 @@
+site_name: Leitor PDF
+
+repo_url: https://github.com/Andre-Rafael/leitor_pdf
+repo_name: Andre-Rafael/leitor_pdf
+edit_uri: tree/main/docs
+
+theme:
+  name: readthedocs
+  language: pt-BR
+  logo: assets/leitor_logo.png
+  favicon: assets/leitor_logo.png
+
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - stylesheet/extra.css
