@@ -24,3 +24,20 @@ mkdocstrings-python = "^1.7.3"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+
+[tool.isort]
+profile = "black"
+line_lenght = 79
+
+
+[tool.taskipy.tasks]
+lint = "blue --check --diff . && isort --check --diff ."
+pre_test = "task lint"
+docs = "mkdocs serve"
+test = "pytest -s -x"
