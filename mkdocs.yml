@@ -15,3 +15,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheet/extra.css
+
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [leitor_pdf]
