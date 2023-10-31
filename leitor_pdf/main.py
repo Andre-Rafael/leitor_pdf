@@ -100,7 +100,7 @@ class LeitorPdf:
         return output_string.getvalue()
 
     def extract_text_with_pdfplumber(
-        self, file_opened: BufferedReader, page_number: List[int] = None
+        self, file_opened: BufferedReader, page_number: int = None
     ) -> str:
         """
         Extrai texto do PDF usando a lib pdfplumber
@@ -110,18 +110,22 @@ class LeitorPdf:
             page_number: caso deseje extrair uma pagina especifica, informar o numero, caso contrario o texto do PDF o texto do pdf todo
 
         Returns:
-            texto do PDF
+            str: texto extraido do pdf
 
         Examples:
             >>> leitor = LeitorPdf()
             >>> file = 'C:/Users/proc/GitHub/leitor_pdf/tests/file_test/helloworld.pdf'
-            >>> with open(file, 'rb') as file:  leitor.extract_text_with_pdfplumber(file, [0])
-            ''
+            >>> with open(file, 'rb') as file:  leitor.extract_text_with_pdfplumber(file, 0)
+            'Hello, world!'
         """
         text = ''
-        with pdfplumber.open(path_or_fp=file_opened, pages=page_number) as pdf:
-            for page in pdf.pages:
+        with pdfplumber.open(file_opened) as pdf:
+            if page_number:
+                page = pdf.pages[page_number]
                 text += page.extract_text()
+            else:
+                for page in pdf.pages:
+                    text += page.extract_text()
         return text
 
     def _check_if_file_is_pdf(self, file: BufferedReader) -> None:
@@ -201,7 +205,7 @@ class LeitorPdf:
                 file, [page_number]
             )
         elif lib == 'pdf_plumber':
-            text: str = self.extract_text_with_pdfplumber(file, [page_number])
+            text: str = self.extract_text_with_pdfplumber(file, page_number)
         else:
             raise InvalidOptionException('Opção invalida')
         return text
