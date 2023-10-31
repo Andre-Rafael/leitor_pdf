@@ -11,14 +11,7 @@ leitor = LeitorPdf()
 
 
 @app.command()
-def leitor_pdf(
-    tipo_leitor: str = Argument(
-        'pdfminer', help='Lib usada para extrair texto'
-    ),
-    path: str = Argument(
-        '/helloworld.pdf', help='path do pdf que terá o texto extraído'
-    ),
-):
+def leitor_pdf(tipo_leitor: str, path: str):
     print(leitor.extract_text_from_file(path, True, tipo_leitor, 0))
 
 

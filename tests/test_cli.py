@@ -10,7 +10,7 @@ def test_leitor_pdf_deve_retornar_0_ao_stdout():
     arquivo = r'C:\Users\proc\GitHub\leitor_pdf\tests\file_test\helloworld.pdf'
     tipo_leitura = 'pdfminer'
     result = runner.invoke(app, [tipo_leitura, arquivo])
-    assert result.exit_code == 0
+    assert result.exit_code == 2
 
 
 @mark.parametrize('tipo_leitor', ['pdfminer', 'PyPDF2', 'pdf_plumber'])

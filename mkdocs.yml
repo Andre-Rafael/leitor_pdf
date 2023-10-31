@@ -7,8 +7,8 @@ edit_uri: tree/main/docs
 theme:
   name: readthedocs
   language: pt-BR
-  logo: assets/leitor_logo.png
-  favicon: assets/leitor_logo.png
+  logo: assets/logo_doc_python.jpg
+  favicon: assets/logo_doc_python.jpg
 
 markdown_extensions:
   - attr_list
@@ -16,8 +16,16 @@ markdown_extensions:
 extra_css:
   - stylesheet/extra.css
 
+watch:
+  - leitor_pdf
+
 plugins:
+- macros
 - mkdocstrings:
     handlers:
       python:
         paths: [leitor_pdf]
+
+extra:
+  commands:
+    run: leitor_pdf

@@ -32,7 +32,7 @@ class LeitorPdf:
             text (str): Texto que terá os caracteres removido.
 
         Returns:
-            texto limpo
+            str: texto limpo
         """
         sem_acento: str = unidecode(text)
         sem_quebra_de_linha: str = sem_acento.replace('\n', '')
