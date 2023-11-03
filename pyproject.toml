@@ -2,6 +2,7 @@
 name = "leitor-pdf"
 version = "0.1.0"
 description = ""
+license = "BeerWare"
 authors = ["andre <andrerafael2000@gmail.com>"]
 readme = "README.md"
 packages = [{include = "leitor_pdf"}]
