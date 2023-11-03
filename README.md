@@ -1,31 +1,12 @@
-Inicio Rapido
+<img src="https://leitor-pdf.readthedocs.io/en/latest/assets/logo_doc_python.jpg" width=200>
 
-Resumo/Pagina inicial/ Readme
-Cards
-Cards oara levar para lugares especifico
-
-Contexto da aplicacao
-    subcomandos do CLI
-COmo instalar 
-    pip install ....
-Como executar
+# Leitor de PDF
+Varias bibliotecas de extração de texto de pdf reunidas em um unico modulos
 
 
-Tutorial
-detalhar os objetivos
-instação
-Explicar cada subcomandos 
-    Variacoes dos comandos
 
-Problemas comuns
+## Como instalar
 
-Quero contribuir
-Como executar um projeto
-    como fazer o clone
-    rodar os testes
-    rodar os linters
-    descr modulos
-        apontar para a documentacao da API
-
-API
-explicar os modulos
+```
+pip install leitor_pdf
+```

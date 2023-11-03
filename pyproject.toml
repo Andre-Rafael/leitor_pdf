@@ -6,7 +6,7 @@ authors = ["andre <andrerafael2000@gmail.com>"]
 readme = "README.md"
 packages = [{include = "leitor_pdf"}]
 classifiers = [
-    "Topic :: Software Development :: Build Tools",
+    "Environment :: Console",
     "Natural Language :: Portuguese",
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3.8"
