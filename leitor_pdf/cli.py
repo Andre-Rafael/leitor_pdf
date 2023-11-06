@@ -10,9 +10,9 @@ app = Typer()
 leitor = LeitorPdf()
 
 
-@app.command()
+@app.command('read_file')
 def leitor_pdf(tipo_leitor: str, path: str):
-    print(leitor.extract_text_from_file(path, True, tipo_leitor, 0))
+    print(leitor.extract_text_from_file(path, True, tipo_leitor))
 
 
 @app.command('list_options')
