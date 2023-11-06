@@ -1,5 +1,5 @@
 from rich.console import Console
-from typer import Argument, Typer
+from typer import Typer
 
 from leitor_pdf.main import LeitorPdf
 

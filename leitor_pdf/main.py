@@ -94,9 +94,12 @@ class LeitorPdf:
             'Hello, world!\\x0c'
         """
         output_string = StringIO()
-        extract_text_to_fp(
-            file_opened, output_string, page_numbers=page_number
-        )
+        if page_number:
+            extract_text_to_fp(
+                file_opened, output_string, page_numbers=page_number
+            )
+        else:
+            extract_text_to_fp(file_opened, output_string)
         return output_string.getvalue()
 
     def extract_text_with_pdfplumber(
@@ -201,9 +204,12 @@ class LeitorPdf:
         if lib == 'PyPDF2':
             text: str = self.extract_text_with_pypdf2(file, page_number)
         elif lib == 'pdfminer':
-            text: str = self._extract_text_with_pdfminer_high_level(
-                file, [page_number]
-            )
+            if page_number:
+                text: str = self._extract_text_with_pdfminer_high_level(
+                    file, [page_number]
+                )
+            else:
+                text: str = self._extract_text_with_pdfminer_high_level(file)
         elif lib == 'pdf_plumber':
             text: str = self.extract_text_with_pdfplumber(file, page_number)
         else:
