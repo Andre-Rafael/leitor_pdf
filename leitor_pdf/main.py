@@ -123,7 +123,7 @@ class LeitorPdf:
         """
         text = ''
         with pdfplumber.open(file_opened) as pdf:
-            if page_number:
+            if page_number != None:
                 page = pdf.pages[page_number]
                 text += page.extract_text()
             else:
